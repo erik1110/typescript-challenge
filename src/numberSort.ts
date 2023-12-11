@@ -10,4 +10,31 @@
 
 export function sortNumbers(numbers: number[]): number[] {
   // 在此實現函式
+  return mergeSort(numbers)
+}
+
+function merge(leftArray: number[], rightArray: number[]){
+  var result = [];
+  while (leftArray.length && rightArray.length){
+    if (leftArray[0]<rightArray[0]){
+      result.push(leftArray.shift())
+    } else {
+      result.push(rightArray.shift())
+    }
+  }
+  result = leftArray.length ? result.concat(leftArray) : result.concat(rightArray)
+  return result
+}
+
+function mergeSort(array: number[]) {
+  if (array.length < 2){
+    return array;
+  }
+
+  var mid: number = Math.floor(array.length / 2);
+  var leftArray: number[] = array.slice(0, mid);
+  var rightArray: number[] = array.slice(mid, array.length);
+
+  return merge(mergeSort(leftArray), mergeSort(rightArray));
+
 }

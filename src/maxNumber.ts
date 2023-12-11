@@ -7,4 +7,11 @@
  */
 export function findMaxNumber(numbers: number[]): number {
     // 在此實現函式
+    let maxValue: number = numbers[0];
+    for (let i=1; i < numbers.length; i++){
+        if (numbers[i] > maxValue){
+            maxValue = numbers[i]
+        }
+    }
+    return maxValue;
 }
