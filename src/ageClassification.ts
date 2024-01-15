@@ -12,4 +12,21 @@
  */
 export function classifyAge(age: number): string {
     // 請在此處寫下你的程式碼
+    let ageGroup: string = "Unknown";
+    switch (true) {
+        case age <= 12:
+            ageGroup = 'Child';
+            break;
+        case age <=17:
+            ageGroup = 'Teenager';
+            break;
+        case age <= 64:
+            ageGroup = 'Adult';
+            break;
+        case age >= 65:
+            ageGroup = 'Senior';
+            break;
+    }
+
+    return ageGroup;
 }

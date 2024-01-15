@@ -10,4 +10,12 @@
  */
 export function filterEvens(numbers: number[]): number[] {
     // 請在此處寫下你的程式碼
+    let result: Array<number> = [];
+    for (let i=0; i <= numbers.length; i++){
+        if (numbers[i]%2==0){
+            result.push(numbers[i])
+        }
+
+    }
+    return result
 }
