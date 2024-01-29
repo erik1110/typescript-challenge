@@ -7,3 +7,20 @@
 
 // 請在下方寫下你的程式碼
 
+export async function fetchData(url: string): Promise<any> {
+    return new Promise((resolve, reject) => {
+        fetch(url).then(response => {
+            if(!response.ok){
+                throw new Error('not 200!');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(data)
+            resolve(data);
+        })
+        .catch(error => {
+            reject(error);
+        })
+    })
+}
